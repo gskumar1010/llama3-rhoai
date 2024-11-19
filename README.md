@@ -30,16 +30,25 @@ This guide provides instructions for a quick way of running llama 3 models on Op
     https://github.com/redhat-na-ssa/hobbyist-guide-to-rhoai/blob/main/docs/08-configure-rhoai.md <br/>
 
 11. Create ServingRuntime and InferenceService on RHOAI
-    <br/> [Sample llama 3 vllm file ](sample-llama-31-8b.yml)
+    <br/> [Sample llama 3 vllm file ](sample-llama-31-8b.yml) <br/>
 
-13. Test the llama model using curl command
+    <img width="987" alt="image" src="images/llama-pod-logs1.png"> <br/>
+    <img width="987" alt="image" src="images/llama-pod-logs2.png"> <br/>
 
-    <img width="987" alt="image" src="images/llama-31-8b.png">
+
+12. Test the llama model using curl command <br/>
+
+    <img width="987" alt="image" src="images/llama-31-8b.png"> <br/>
+    model name in curl command should match with https://github.com/gskumar1010/llama3-rhoai/blob/main/sample-llama-31-8b.yml#L56
+
+
 
     ```
     curl -k localhost:8080/v1/completions  -H "Content-Type: application/json"  -d '{"model": "llama-31-8b", "prompt": "Describe Paris in 100 words or less.",  "max_tokens": 100,  "temperature": 0}' <br/>
-
     
 14. Troubleshooting <br/>
-    If you run into error where llama3-8b-predictor is crashing, check for outofmemory error in the logs
+    - If you run into error where llama3-8b-predictor is crashing, check for outofmemory error in the logs <br/>
+
+    - https://github.com/gskumar1010/llama3-rhoai/blob/main/sample-llama-31-8b.yml#L78 should match with Data field in the storage-config secret (done as part of step 6)
+    <img width="987" alt="image" src="images/storage-config-secret.png">
     
