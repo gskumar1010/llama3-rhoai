@@ -17,7 +17,7 @@ This guide provides instructions for a quick way of running llama 3 models on Op
 8. Import  model meta-llama/Llama-3.1-8B using  https://github.com/rh-aiservices-bu/models-aas/tree/main?tab=readme-ov-file    <br/>
    <img width="987" alt="image" src="images/llama-31-8b-loading-model.png"> <br>
    https://huggingface.co/meta-llama/Llama-3.1-8B has the model. Note: You need to request access for it on Hugging face
-9. Start a g5.xlarge node <br/>
+9. Start a g5.2xlarge node <br/>
 
    configure taints/tolerations <br/>
    https://github.com/redhat-na-ssa/hobbyist-guide-to-rhoai/blob/main/docs/05-configure-gpu-sharing-method.md#52-configure-taints-and-tolerations <br/>
